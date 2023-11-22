@@ -22,8 +22,8 @@ export class PersonalinfoComponent implements OnInit {
   ngOnDestroy(){
     // console.log(this.data)
     // this.hello();
-    this.inputdata.formData=this.data
-       this.output.next(this.inputdata)
+    this.inputdata.data=this.data.value
+       this.output.next(this.data.value)
       //  console.log(this.inputdata)
   }
   data=this.fb.group({

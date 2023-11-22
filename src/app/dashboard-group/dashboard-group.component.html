@@ -2,9 +2,12 @@
 <app-personalinfo></app-personalinfo> -->
 <!-- [processStep]="nextStep" -->
 <app-steps [substeps]="names"></app-steps>
-<ng-template
+<!-- <ng-template
       appProcess [processStep]="nextStep" [submitEvent]="submitRequest"  [stepsItems]="steppers" [i]="i">
-</ng-template>
+</ng-template> -->
+<ng-content>
+
+</ng-content>
 <button (click)="next()">Next⏭️</button>
 <button (click)="pre()">pre</button>
 <footer>
