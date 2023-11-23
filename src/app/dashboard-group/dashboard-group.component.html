@@ -5,9 +5,18 @@
 <!-- <ng-template
       appProcess [processStep]="nextStep" [submitEvent]="submitRequest"  [stepsItems]="steppers" [i]="i">
 </ng-template> -->
-<ng-content>
+<!-- <ng-content>
 
-</ng-content>
+</ng-content> -->
+<!-- <app-personalinfo (buttonClick)="onButtonClick()">
+<form>
+    <label>Name</label>
+    <input type="text">
+</form>
+</app-personalinfo> -->
+<ng-template #processview>
+
+</ng-template>
 <button (click)="next()">Next⏭️</button>
 <button (click)="pre()">pre</button>
 <footer>

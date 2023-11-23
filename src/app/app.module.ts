@@ -8,6 +8,7 @@ import { PersonalinfoComponent } from './processcomponents/personalinfo/personal
 import { ProcessDirective } from './process.directive';
 import { DashboardGroupComponent } from './dashboard-group/dashboard-group.component';
 import { BillingComponent } from './processcomponents/billing/billing.component';
+import { ProductContentComponent } from './product-content/product-content.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { BillingComponent } from './processcomponents/billing/billing.component'
     PersonalinfoComponent,
     ProcessDirective,
     DashboardGroupComponent,
-    BillingComponent
+    BillingComponent,
+    ProductContentComponent
   ],
   imports: [
     BrowserModule,

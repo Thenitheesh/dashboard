@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { AddStepItem } from './addStep';
+import {IProduct} from './product.model'
 import { PersonalinfoComponent } from './processcomponents/personalinfo/personalinfo.component';
 import { BillingComponent } from './processcomponents/billing/billing.component';
 
@@ -12,19 +13,16 @@ export class AppComponent {
   title = 'dashboard';
   // steps: AddStepItem[]=[];
 
-  steps: AddStepItem[] = [
+  steps: IProduct[] = [
     {
-      title: 'Tab 1',
+    
       component: PersonalinfoComponent,
-      isDisable:false,
-      isHide:false,
-   data:[]
+   
+   data:[{name:"personal info componnet"}]
           },
     {
-      title: 'Tab 2',
-      component: BillingComponent,
-      isDisable:false,
-      isHide:false,
+     component: BillingComponent,
+      
       data:[]
     },
   

@@ -4,7 +4,7 @@ import { Directive, EventEmitter, Output, Type } from '@angular/core';
 @Directive()
 export class AddStepItem {
 
-  // @Output() hideTab = new EventEmitter();
+  @Output() btnclick = new EventEmitter();
   // @Output() showHeader = new EventEmitter();
   // @Output() formdata:any[]=[]
   isHide: boolean;

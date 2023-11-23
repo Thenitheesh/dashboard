@@ -1,5 +1,6 @@
-<form [formGroup]="data">
-    <p>name</p>
-    <input type="text"  formControlName="name">
-<button (click)="hello()">clicking</button>
+<form [formGroup]="formdata">
+  <p id="name">name</p>
+  <input type="text" formControlName="name" />
+  <button (click)="hello()">clicking</button>
 </form>
+<button (click)="sendData()">next perComponent</button>
