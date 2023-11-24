@@ -78,13 +78,14 @@ export class DashboardGroupComponent implements OnInit {
     //   this.nextStep = this.components[this.i];
     // }
     // this.submitRequest = this.event.emit;
+ 
     // this.steppers.push(new AddStepItem(BillingComponent,{name:"BillingComponent"}))
     console.log(this.firstIndex);
     if (this.firstIndex >= 0) {
       this.firstIndex++;
 
       this.loadprocess(this.steppers[this.firstIndex]);
-      
+      // this.loadproceess (thi.stepa kkfkiiiiif)
     }
   }
   pre() {
