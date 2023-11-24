@@ -66,7 +66,8 @@ export class DashboardGroupComponent implements OnInit {
     this.componentRef.instance.btnResponse.subscribe((val: any) =>{
      console.log(val)
 
-    this.componentRef.data=val}
+    this.componentRef.data=val
+  console.log("hi") }
     );
     // console.log(this.stepsItems[this.i].component == componentmain)
   }
