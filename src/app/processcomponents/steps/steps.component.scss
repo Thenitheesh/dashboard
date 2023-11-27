@@ -1,9 +1,12 @@
 .main-container{
     height: inherit;
     width: 20rem;
-    background-color: aquamarine;
     padding-top: 2rem;
     padding-bottom: 2rem;
+    position: relative;
+}
+.main-container > *{
+    color: aqua;
 }
 .smallcontainer{
     width: 100%;
@@ -11,6 +14,21 @@
     padding-left: 2rem;
     padding-top: 0.5rem;
 }
+  
+
+  .vertical {
+    display: inline-block;
+    width: 3px;
+    height: 70%;
+    position: absolute;
+    top: 41px;
+  }
+  .vertical {
+    box-shadow: inset 0px 4px 6px #ccc;
+  }
+  .progress-bar {
+    box-shadow: inset 0px 4px 6px rgba(100,100,100,0.6);
+  }
 a{
     font-weight: 600;
     font-size: 1rem;
