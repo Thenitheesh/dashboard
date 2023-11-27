@@ -1,6 +1,14 @@
 <form [formGroup]="formdata">
-  <p id="name">name</p>
-  <input type="text" formControlName="name" />
+  <label id="name">First Name</label>
+  <input type="text" formControlName="FirstName" />
+  <label for="">Last Name</label>
+  <input type="text" formControlName="lastName">
+  <label for="email">Email</label>
+  <input type="email" id="email" name="email" required>
+  <label for="phoneNumber">Phone Number</label>
+  <input type="tel" id="phoneNumber" name="phoneNumber" required>
+  <label for="address">Address</label>
+  <textarea id="address" name="address" required></textarea>
   <button (click)="hello()">clicking</button>
 </form>
 <button (click)="sendData()">next perComponent</button>

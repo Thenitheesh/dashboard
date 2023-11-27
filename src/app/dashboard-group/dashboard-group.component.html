@@ -1,27 +1,42 @@
 <!-- <app-steps [substeps]="names"></app-steps>
 <app-personalinfo></app-personalinfo> -->
 <!-- [processStep]="nextStep" -->
-<app-steps [substeps]="names"></app-steps>
-<!-- <ng-template
-      appProcess [processStep]="nextStep" [submitEvent]="submitRequest"  [stepsItems]="steppers" [i]="i">
-</ng-template> -->
-<!-- <ng-content>
-
-</ng-content> -->
-<!-- <app-personalinfo (buttonClick)="onButtonClick()">
-<form>
-    <label>Name</label>
-    <input type="text">
-</form>
-</app-personalinfo> -->
-<ng-template #processview>
-
-</ng-template>
-<button (click)="next()">Next⏭️</button>
-<button (click)="pre()">pre</button>
-<footer>
-    <div class="buttoncontainer">
-        <button class="btnbottom">Previous</button>
-        <button class="btnbottom">Next</button>
-    </div>
-</footer>
+<header>
+    <h1>Nedbank</h1>
+</header>
+<div class="container">
+    <div class="progressBar">
+        <div class="progress-step" *ngFor="let item of friendslist"></div>
+        </div>
+        <!-- <ng-template
+            appProcess [processStep]="nextStep" [submitEvent]="submitRequest"  [stepsItems]="steppers" [i]="i">
+        </ng-template> -->
+        <!-- <ng-content>
+    
+        </ng-content> -->
+        <!-- <app-personalinfo (buttonClick)="onButtonClick()">
+            <form>
+                <label>Name</label>
+                <input type="text">
+            </form>
+        </app-personalinfo> -->
+    
+    
+    
+        <div class="mainForm">
+            <app-steps [substeps]="names"></app-steps>
+            <ng-template #processview>
+            </ng-template>
+        </div>
+    
+    <button (click)="next()">Next⏭️</button>
+    <button (click)="pre()">pre</button>
+</div>
+<div class="footerbox">
+    <footer>
+        <div class="buttoncontainer">
+            <button class="btnbottom">Previous</button>
+            <button class="btnbottom">Next</button>
+        </div>
+    </footer>
+</div>

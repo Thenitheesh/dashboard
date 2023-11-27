@@ -24,6 +24,41 @@ export class DashboardGroupComponent implements OnInit {
   @ViewChild('processview',{read:ViewContainerRef,static:true}) viewRef: any;
   componentRef:any
   firstIndex = 0;
+  friendslist = [
+    {
+      name: 'Nishant',
+      age: 25
+    },
+    {
+      name: 'Shailesh',
+      age: 45
+    },
+    {
+      name: 'Abhishek',
+      age: 36
+    },
+    {
+      name: 'Akshay',
+      age: 65
+    },
+    {
+      name: 'Ashish',
+      age: 12
+    },
+    {
+      name: 'Uday',
+      age: 31
+    },
+    {
+      name: 'Mayank',
+      age: 45
+    },
+    {
+      name: 'Raju',
+      age: 74
+    },
+  ]
+  items=4
   constructor(
     public viewContainerRef: ViewContainerRef,
     private componentFactoryResolver: ComponentFactoryResolver

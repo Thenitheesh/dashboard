@@ -33,7 +33,8 @@ export class PersonalinfoComponent implements OnInit {
     //  console.log(this.inputdata)
   }
   formdata = this.fb.group({
-    name: ['', [Validators.required, Validators.minLength(5)]],
+    FirstName: ['', [Validators.required, Validators.minLength(5)]],
+    lastName: ['', [Validators.required, Validators.minLength(5)]]
   });
   sendData(){
     this.btnResponse.emit(this.formdata)
