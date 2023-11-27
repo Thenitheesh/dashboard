@@ -9,6 +9,7 @@ import { ProcessDirective } from './process.directive';
 import { DashboardGroupComponent } from './dashboard-group/dashboard-group.component';
 import { BillingComponent } from './processcomponents/billing/billing.component';
 import { ProductContentComponent } from './product-content/product-content.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { ProductContentComponent } from './product-content/product-content.compo
     ProcessDirective,
     DashboardGroupComponent,
     BillingComponent,
-    ProductContentComponent
+    ProductContentComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

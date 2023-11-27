@@ -4,10 +4,13 @@
 <header>
     <h1>Nedbank</h1>
 </header>
+<div class="error" *ngIf="errorState">
+    <p>Please check your form</p>
+</div>
 <div class="container">
-    <div class="progressBar">
+    <!-- <div class="progressBar">
         <div class="progress-step" *ngFor="let item of friendslist"></div>
-        </div>
+        </div> -->
         <!-- <ng-template
             appProcess [processStep]="nextStep" [submitEvent]="submitRequest"  [stepsItems]="steppers" [i]="i">
         </ng-template> -->
@@ -26,19 +29,20 @@
         <div class="mainForm">
             <app-steps [substeps]="names"></app-steps>
             <div class="datacontainer">
+                <h1 class="stepHeading">Personal Details</h1>
                 <ng-template #processview>
                 </ng-template>
             </div>
         </div>
     
-    <button (click)="next()">Next⏭️</button>
-    <button (click)="pre()">pre</button>
+    <!-- <button (click)="next()">Next⏭️</button>
+    <button (click)="pre()">pre</button> -->
 </div>
-<div class="footerbox">
+<!-- <div class="footerbox">
     <footer>
         <div class="buttoncontainer">
             <button class="btnbottom">Previous</button>
             <button class="btnbottom">Next</button>
         </div>
     </footer>
-</div>
+</div> -->

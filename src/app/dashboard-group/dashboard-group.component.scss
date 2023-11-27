@@ -13,11 +13,19 @@ footer{
 }
 .container{
     margin-top:5rem ;
+    margin-left: 12rem;
+    margin-right: 5rem;
+}
+.stepHeading{
+    position: absolute;
+    top: 75px;
 }
 .datacontainer{
     background-color: white;
     border-radius: 5px;
     box-shadow: inset 0px 0px 1px 1px #6666668f;
+    margin-top: 4rem;
+    width: 100%;
 }
 header{
     position: absolute;
@@ -69,3 +77,13 @@ header h1{
     width: 7rem;
     height: 2rem;
     margin: 1rem;}
+    .error{
+        position: absolute;
+        top: 75px;
+        right:  10px;
+        border-radius:5px ;
+        padding: 5px;
+        background-color: white;
+        border: 2px solid rgba(240,12,12,1);
+        box-shadow:  -1px 1px 5px 0px rgba(240,12,12,1);
+    }

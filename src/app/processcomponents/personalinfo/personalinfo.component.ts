@@ -21,6 +21,7 @@ export class PersonalinfoComponent implements OnInit {
     this.stateData = this.formDataService.getState();
     // this.data.get("name")?.patchValue(this.stateData.value?.name)
     // this.data.get('name')?.patchValue(this.inputdata.formData?.value);
+    this.formdata.get('FirstName')?.patchValue(this.data?.FirstName);
     // console.log(this.inputdata.formData?.value);
     console.log(this.data)
   }
@@ -36,13 +37,27 @@ export class PersonalinfoComponent implements OnInit {
     FirstName: ['', [Validators.required, Validators.minLength(5)]],
     lastName: ['', [Validators.required, Validators.minLength(5)]]
   });
-  sendData(){
-    this.btnResponse.emit(this.formdata)
+  // pre(){
+  //   if(this.formdata.valid){
+  //   this.btnResponse.emit(this.formdata)}
+  // }
+  // next(){
+  //   if(this.formdata.valid){
+  //     this.btnResponse.emit(this.formdata)}
+  // }
+  clickEvent(Event:any){
+    if(this.formdata.valid){
+Event.data=this.formdata.value
+      this.btnResponse.emit(Event)
+    }else{
+      Event.name="error"
+      this.btnResponse.emit(Event)
+    }
   }
-  hello() {
-    console.log('hello world');
-    // this.newItemEvent.emit(this.data.value);
-    // this.output.next(this.data)
   }
+  // hello() {
+  //   console.log('hello world');
+  //   // this.newItemEvent.emit(this.data.value);
+  //   // this.output.next(this.data)
+  // }
 
-}

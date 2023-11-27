@@ -24,41 +24,43 @@ export class DashboardGroupComponent implements OnInit {
   @ViewChild('processview',{read:ViewContainerRef,static:true}) viewRef: any;
   componentRef:any
   firstIndex = 0;
-  friendslist = [
-    {
-      name: 'Nishant',
-      age: 25
-    },
-    {
-      name: 'Shailesh',
-      age: 45
-    },
-    {
-      name: 'Abhishek',
-      age: 36
-    },
-    {
-      name: 'Akshay',
-      age: 65
-    },
-    {
-      name: 'Ashish',
-      age: 12
-    },
-    {
-      name: 'Uday',
-      age: 31
-    },
-    {
-      name: 'Mayank',
-      age: 45
-    },
-    {
-      name: 'Raju',
-      age: 74
-    },
-  ]
+  // friendslist = [
+  //   {
+  //     name: 'Nishant',
+  //     age: 25
+  //   },
+  //   {
+  //     name: 'Shailesh',
+  //     age: 45
+  //   },
+  //   {
+  //     name: 'Abhishek',
+  //     age: 36
+  //   },
+  //   {
+  //     name: 'Akshay',
+  //     age: 65
+  //   },
+  //   {
+  //     name: 'Ashish',
+  //     age: 12
+  //   },
+  //   {
+  //     name: 'Uday',
+  //     age: 31
+  //   },
+  //   {
+  //     name: 'Mayank',
+  //     age: 45
+  //   },
+  //   {
+  //     name: 'Raju',
+  //     age: 74
+  //   },
+  // ]
   items=4
+  errorState=false
+  data={}
   constructor(
     public viewContainerRef: ViewContainerRef,
     private componentFactoryResolver: ComponentFactoryResolver
@@ -97,14 +99,37 @@ export class DashboardGroupComponent implements OnInit {
       console.log("hehe")
     }
     // console.log( this.componentRef.instance.inputdata)
-    (this.componentRef.instance as AddStepItem).data =prop.data;
+    // (this.componentRef.instance as AddStepItem).data =prop.data;
+    (this.componentRef.instance as AddStepItem).data =this.data;
     this.componentRef.instance.btnResponse.subscribe((val: any) =>{
-     console.log(val)
+     console.log(val.data)
 
+if(val.name=="error"){
+  this.showError()
+}
+if(val.name=="next"){
+  // this.data={...this.data,val.data}
+  Object.assign(this.data, val.data);
+  console.log(this.data)
+    this.next()
+  
+}
+if(val.name=="previous"){
+  // this.data={...this.data,val.data}
+  Object.assign(this.data, val.data);
+  console.log(this.data)
+  this.pre()
+}
     this.componentRef.data=val
-  console.log("hi") }
+  console.log("hi")
+
+}
     );
     // console.log(this.stepsItems[this.i].component == componentmain)
+  }
+  showError(){
+    this.errorState=true
+    setTimeout(() => { this.errorState=false; }, 2000);
   }
   next() {
     // if (this.i < this.components.length - 1) {

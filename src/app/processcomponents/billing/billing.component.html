@@ -1,5 +1,6 @@
-<form [formGroup]="data">
+<form [formGroup]="formdata">
 <h1>price</h1>
 <p>200000$</p>
 <input type="text" formControlName="price">
 </form>
+<app-footer (btnresponse)="clickEvent($event)"></app-footer>

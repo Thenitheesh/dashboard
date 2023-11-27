@@ -10,7 +10,7 @@
     <input type="tel" id="phoneNumber" name="phoneNumber" required>
     <label for="address">Address</label>
     <textarea id="address" name="address" required></textarea>
-    <button (click)="hello()">clicking</button>
+    <!-- <button (click)="hello()">clicking</button> -->
   </form>
-  <button (click)="sendData()">next perComponent</button>
 </div>
+<app-footer (btnresponse)="clickEvent($event)"></app-footer>

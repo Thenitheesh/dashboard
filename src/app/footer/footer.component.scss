@@ -1,0 +1,28 @@
+footer{
+    position: fixed;
+    height: 4rem;
+    background-color: white;
+    bottom: 0;
+    box-shadow: -6px -4px 5px #1211112b;
+  
+ 
+    width: 100%;
+}
+.footerbox{
+    position: absolute;
+    left: 0;
+}
+.buttoncontainer{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    padding-right:20rem;
+}
+.btnbottom{
+    background-color: white;
+    border-radius: 8px;
+    border-style: none;
+    border: 2px solid rgb(67, 196, 145);
+    width: 7rem;
+    height: 2rem;
+    margin: 1rem;}
