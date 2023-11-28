@@ -26,7 +26,6 @@ export class PersonalinfoComponent implements OnInit {
     this.formdata.get('Email')?.patchValue(this.data?.Email);
     this.formdata.get('phone')?.patchValue(this.data?.phone);
     this.formdata.get('address')?.patchValue(this.data?.address);
-    // console.log(this.inputdata.formData?.value);
     console.log(this.data)
   }
   output = new Subject();
