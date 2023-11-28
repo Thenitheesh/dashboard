@@ -22,6 +22,10 @@ export class PersonalinfoComponent implements OnInit {
     // this.data.get("name")?.patchValue(this.stateData.value?.name)
     // this.data.get('name')?.patchValue(this.inputdata.formData?.value);
     this.formdata.get('FirstName')?.patchValue(this.data?.FirstName);
+    this.formdata.get('lastName')?.patchValue(this.data?.lastName);
+    this.formdata.get('Email')?.patchValue(this.data?.Email);
+    this.formdata.get('phone')?.patchValue(this.data?.phone);
+    this.formdata.get('address')?.patchValue(this.data?.address);
     // console.log(this.inputdata.formData?.value);
     console.log(this.data)
   }
@@ -35,7 +39,10 @@ export class PersonalinfoComponent implements OnInit {
   }
   formdata = this.fb.group({
     FirstName: ['', [Validators.required, Validators.minLength(5)]],
-    lastName: ['', [Validators.required, Validators.minLength(5)]]
+    lastName: ['', [Validators.required, Validators.minLength(5)]],
+    Email:['', [Validators.required, Validators.minLength(5)]],
+    phone:['', [Validators.required, Validators.minLength(5)]],
+    address:['', [Validators.required, Validators.minLength(5)]]
   });
   // pre(){
   //   if(this.formdata.valid){
