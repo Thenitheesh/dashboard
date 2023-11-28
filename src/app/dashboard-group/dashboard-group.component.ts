@@ -69,8 +69,8 @@ export class DashboardGroupComponent implements OnInit {
   public components = [PersonalinfoComponent, BillingComponent];
   names: string[] = [
     'personal details',
-    'consent',
     'billing',
+    'consent',
     'terms and conditions',
     'confirmation',
   ];
