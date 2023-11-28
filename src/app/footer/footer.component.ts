@@ -26,7 +26,6 @@ this.btnresponse.emit(click)
       name:"next",
       data:{}
           }
-          console.log("testing next")
       this.btnresponse.emit(click)
   }
 }

@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { IStepper } from 'src/app/dashboard-group/dasnboard.model';
 
 @Component({
   selector: 'app-steps',
@@ -7,11 +8,11 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class StepsComponent implements OnInit {
   
-  @Input() substeps:string[]=[]
-
+  @Input() substeps: IStepper[] = [];
   
   constructor() { }
   ngOnInit(): void {
+    console.log(this.substeps)
   }
 
 }

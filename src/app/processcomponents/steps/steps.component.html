@@ -4,5 +4,8 @@
         <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="height: 40%;">
         </div>  
       </div>
-   <div class="smallcontainer" *ngFor="let item of substeps"><a>{{item}}</a></div>
+      
+   <div class="smallcontainer" *ngFor="let item of substeps">
+    <div class="product-configuration-side-stepper-container"><a class="product-configuration-side-stepper-container__step" 
+      [ngClass]="{'completed': item.isCompleted, 'in-progress': item.inProgress}">{{item.name}}</a></div></div>
 </div>

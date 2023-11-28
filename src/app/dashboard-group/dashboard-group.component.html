@@ -2,7 +2,7 @@
 <app-personalinfo></app-personalinfo> -->
 <!-- [processStep]="nextStep" -->
 <header>
-    <h1>Nedbank</h1>
+    <h1>bank</h1>
 </header>
 <div class="error" *ngIf="errorState">
     <p>Please check your form</p>
@@ -27,7 +27,7 @@
     
     
         <div class="mainForm">
-            <app-steps [substeps]="names"></app-steps>
+            <app-steps [substeps]="stepper"></app-steps>
             <div class="datacontainer">
                 <h1 class="stepHeading">Personal Details</h1>
                 <ng-template #processview>

@@ -36,3 +36,24 @@ a{
    text-transform:capitalize;
     
 }
+
+.product-configuration-side-stepper-container {
+  &__step {
+    padding-left: 24px;
+    border-left: 4px solid #E5E5E5;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+ 
+    &.completed {
+      border-left: 4px solid #0C8450;
+      color: #0C8450;
+    }
+ 
+    &.in-progress {
+      border-left: 4px solid blue;
+      color: blue;
+    }
+  }
+}

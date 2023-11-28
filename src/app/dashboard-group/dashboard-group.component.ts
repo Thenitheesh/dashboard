@@ -13,6 +13,7 @@ import { BillingComponent } from '../processcomponents/billing/billing.component
 import { StepsComponent } from '../processcomponents/steps/steps.component';
 import { AddStepItem } from '../addStep';
 import { IProduct } from '../product.model';
+import { IStepper } from './dasnboard.model';
 
 @Component({
   selector: 'app-dashboard-group',
@@ -73,9 +74,28 @@ export class DashboardGroupComponent implements OnInit {
     'terms and conditions',
     'confirmation',
   ];
+
+  stepper: IStepper[] = [
+    {name: 'personal details',
+    isCompleted: false,
+    inProgress: false
+  },
+  {name: 'consent',
+  isCompleted: false,
+  inProgress: false
+}, {name: 'billing',
+isCompleted: false,
+inProgress: false
+}, {name: 'terms and conditions',
+isCompleted: false,
+inProgress: false
+},
+  ];
+
+
   ngOnInit(): void {
     if (this.firstIndex == 0) {
-      this.loadprocess(this.steppers[this.firstIndex]);
+      this.loadprocess(this.steppers[this.firstIndex],this.firstIndex );
     }
     // var myName = this.text.nativeElement.value;
     // console.log(myName);
@@ -85,9 +105,13 @@ export class DashboardGroupComponent implements OnInit {
   submitRequest!: any;
   event = new EventEmitter();
 
-  loadprocess(prop: any) {
+  loadprocess(prop: any, index: number) {
+    console.log(index)
     this.viewRef.clear();
     // console.log("hehe")
+    if(this.stepper[index].isCompleted === false){
+    this.stepper[index].inProgress = true;
+    }
          const currentcomponent=new AddStepItem(prop.component,prop.data)
     const componentmain = this.componentFactoryResolver.resolveComponentFactory(
       prop.component
@@ -109,6 +133,8 @@ if(val.name=="error"){
 }
 if(val.name=="next"){
   // this.data={...this.data,val.data}
+  this.stepper[index].inProgress = false;
+  this.stepper[index].isCompleted = true;
   Object.assign(this.data, val.data);
   console.log(this.data)
     this.next()
@@ -144,7 +170,7 @@ if(val.name=="previous"){
     if (this.firstIndex >= 0) {
       this.firstIndex++;
 
-      this.loadprocess(this.steppers[this.firstIndex]);
+      this.loadprocess(this.steppers[this.firstIndex],this.firstIndex);
       // this.loadproceess (thi.stepa kkfkiiiiif)
     }
   }
@@ -154,7 +180,7 @@ if(val.name=="previous"){
       if (this.firstIndex == 0 || this.firstIndex == -1) {
         this.firstIndex = 0;
       }
-      this.loadprocess(this.steppers[this.firstIndex]);
+      this.loadprocess(this.steppers[this.firstIndex], this.firstIndex);
       
     }
     //   if (this.i > 0) {
