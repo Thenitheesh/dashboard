@@ -37,7 +37,7 @@ a{
     
 }
 
-.product-configuration-side-stepper-container {
+.stepper-container {
   &__step {
     padding-left: 24px;
     border-left: 4px solid #E5E5E5;
@@ -52,8 +52,8 @@ a{
     }
  
     &.in-progress {
-      border-left: 4px solid blue;
-      color: blue;
+      border-left: 4px solid rgb(67, 67, 69);
+      color: rgb(67, 67, 69);
     }
   }
 }

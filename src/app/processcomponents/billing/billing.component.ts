@@ -24,10 +24,13 @@ export class BillingComponent implements OnInit {
     price: ['', [Validators.required, Validators.minLength(5)]],
   })
   clickEvent(Event:any){
-    if(this.formdata.valid){
+    if(this.formdata.valid && Event.name=="next"){
 Event.data=this.formdata.value
       this.btnResponse.emit(Event)
-    }else{
+    }else if(Event.name=="previous"){
+      this.btnResponse.emit(Event)
+    }
+    else{
       Event.name="error"
       this.btnResponse.emit(Event)
     }
