@@ -90,6 +90,10 @@ inProgress: false
 isCompleted: false,
 inProgress: false
 },
+{name: 'Review',
+isCompleted: false,
+inProgress: false
+},
   ];
 
 
