@@ -14,6 +14,7 @@ import { StepsComponent } from '../processcomponents/steps/steps.component';
 import { AddStepItem } from '../addStep';
 import { IProduct } from '../product.model';
 import { IStepper } from './dasnboard.model';
+import { ConsentComponent } from '../processcomponents/consent/consent.component';
 
 @Component({
   selector: 'app-dashboard-group',
@@ -66,7 +67,7 @@ export class DashboardGroupComponent implements OnInit {
     public viewContainerRef: ViewContainerRef,
     private componentFactoryResolver: ComponentFactoryResolver
   ) {}
-  public components = [PersonalinfoComponent, BillingComponent];
+  // public components = [PersonalinfoComponent, BillingComponent,ConsentComponent];
   names: string[] = [
     'personal details',
     'billing',
@@ -80,10 +81,10 @@ export class DashboardGroupComponent implements OnInit {
     isCompleted: false,
     inProgress: false
   },
-  {name: 'consent',
+  {name: 'billing',
   isCompleted: false,
   inProgress: false
-}, {name: 'billing',
+}, {name: 'consent',
 isCompleted: false,
 inProgress: false
 }, {name: 'terms and conditions',
@@ -104,7 +105,7 @@ inProgress: false
     // var myName = this.text.nativeElement.value;
     // console.log(myName);
   }
-  nextStep: any = this.components[0];
+  // nextStep: any = this.components[0];
   i = 0;
   submitRequest!: any;
   event = new EventEmitter();
@@ -136,7 +137,6 @@ if(val.name=="error"){
   this.showError()
 }
 if(val.name=="next"){
-  // this.data={...this.data,val.data}
   this.stepper[index].inProgress = false;
   this.stepper[index].isCompleted = true;
   Object.assign(this.data, val.data);
@@ -145,7 +145,6 @@ if(val.name=="next"){
   
 }
 if(val.name=="previous"){
-  // this.data={...this.data,val.data}
   Object.assign(this.data, val.data);
   console.log(this.data)
   this.pre()

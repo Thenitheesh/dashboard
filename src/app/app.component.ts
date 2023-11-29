@@ -3,6 +3,7 @@ import { AddStepItem } from './addStep';
 import {IProduct} from './product.model'
 import { PersonalinfoComponent } from './processcomponents/personalinfo/personalinfo.component';
 import { BillingComponent } from './processcomponents/billing/billing.component';
+import { ConsentComponent } from './processcomponents/consent/consent.component';
 
 @Component({
   selector: 'app-root',
@@ -25,6 +26,11 @@ export class AppComponent {
       
       data:[]
     },
+    {
+      component: ConsentComponent,
+       
+       data:[]
+     },
   
   ];
   constructor(){

@@ -29,7 +29,7 @@
         <div class="mainForm">
             <app-steps [substeps]="stepper"></app-steps>
             <div class="datacontainer">
-                <h1 class="stepHeading">Personal Details</h1>
+                <h1 class="stepHeading">{{stepper[firstIndex].name[0].toUpperCase() +  stepper[firstIndex].name.slice(1)}}</h1>
                 <ng-template #processview>
                 </ng-template>
             </div>

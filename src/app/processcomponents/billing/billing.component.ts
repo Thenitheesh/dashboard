@@ -8,12 +8,12 @@ import { Subject } from 'rxjs';
   styleUrls: ['./billing.component.scss']
 })
 export class BillingComponent implements OnInit {
-  @Input() inputdata: any;
+  @Input()   data:any;
   @Output() btnResponse =new EventEmitter<any>();;
   constructor(private fb: FormBuilder) { }
   output = new Subject();
   ngOnInit(): void {
-    console.log(this.inputdata)
+    
   }
   ngOnDestroy(){
     // console.log(this.data)

@@ -10,6 +10,7 @@ import { DashboardGroupComponent } from './dashboard-group/dashboard-group.compo
 import { BillingComponent } from './processcomponents/billing/billing.component';
 import { ProductContentComponent } from './product-content/product-content.component';
 import { FooterComponent } from './footer/footer.component';
+import { ConsentComponent } from './processcomponents/consent/consent.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { FooterComponent } from './footer/footer.component';
     DashboardGroupComponent,
     BillingComponent,
     ProductContentComponent,
-    FooterComponent
+    FooterComponent,
+    ConsentComponent
   ],
   imports: [
     BrowserModule,

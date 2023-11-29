@@ -18,14 +18,15 @@ export class PersonalinfoComponent implements OnInit {
   ) {}
   stateData: any;
   ngOnInit(): void {
-    this.stateData = this.formDataService.getState();
-    // this.data.get("name")?.patchValue(this.stateData.value?.name)
-    // this.data.get('name')?.patchValue(this.inputdata.formData?.value);
-    this.formdata.get('FirstName')?.patchValue(this.data?.FirstName);
-    this.formdata.get('lastName')?.patchValue(this.data?.lastName);
-    this.formdata.get('Email')?.patchValue(this.data?.Email);
-    this.formdata.get('phone')?.patchValue(this.data?.phone);
-    this.formdata.get('address')?.patchValue(this.data?.address);
+    if(this.data?.FirstName != undefined){
+
+      this.formdata.setValue(this.data)
+    }
+    // this.formdata.get('FirstName')?.patchValue(this.data?.FirstName);
+    // this.formdata.get('lastName')?.patchValue(this.data?.lastName);
+    // this.formdata.get('Email')?.patchValue(this.data?.Email);
+    // this.formdata.get('phone')?.patchValue(this.data?.phone);
+    // this.formdata.get('address')?.patchValue(this.data?.address);
     console.log(this.data)
   }
   output = new Subject();
