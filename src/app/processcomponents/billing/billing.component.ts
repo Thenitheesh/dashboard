@@ -13,13 +13,9 @@ export class BillingComponent implements OnInit {
   constructor(private fb: FormBuilder) { }
   output = new Subject();
   ngOnInit(): void {
-    
+    this.formdata.patchValue(this.data)
   }
-  ngOnDestroy(){
-    // console.log(this.data)
-    // this.hello();
-      //  this.output.next(this.data)
-  }
+
   formdata=this.fb.group({
     price: ['', [Validators.required, Validators.minLength(5)]],
   })
