@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Btnres } from '../btnres';
 
 @Component({
@@ -8,7 +8,7 @@ import { Btnres } from '../btnres';
 })
 
 export class FooterComponent implements OnInit {
-
+@Input() btnvalue:string=""
 @Output() btnresponse=new EventEmitter<Btnres>();
   constructor() { }
 
@@ -28,4 +28,5 @@ this.btnresponse.emit(click)
           }
       this.btnresponse.emit(click)
   }
+
 }

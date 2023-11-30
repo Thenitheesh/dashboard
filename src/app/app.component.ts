@@ -4,6 +4,8 @@ import {IProduct} from './product.model'
 import { PersonalinfoComponent } from './processcomponents/personalinfo/personalinfo.component';
 import { BillingComponent } from './processcomponents/billing/billing.component';
 import { ConsentComponent } from './processcomponents/consent/consent.component';
+import { TermsandconditionsComponent } from './processcomponents/termsandconditions/termsandconditions.component';
+import { ReviewComponent } from './processcomponents/review/review.component';
 
 @Component({
   selector: 'app-root',
@@ -28,6 +30,14 @@ export class AppComponent {
     },
     {
       component: ConsentComponent,
+       
+       data:[]
+     },{
+      component: TermsandconditionsComponent,
+       
+       data:[]
+     },{
+      component: ReviewComponent,
        
        data:[]
      },

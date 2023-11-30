@@ -14,7 +14,6 @@ export class PersonalinfoComponent implements OnInit {
   @Output() btnResponse = new EventEmitter<any>();;
   constructor(
     private fb: FormBuilder,
-    private formDataService: FormdataService
   ) { }
   stateData: any;
   ngOnInit(): void {
@@ -46,6 +45,7 @@ export class PersonalinfoComponent implements OnInit {
   //     this.btnResponse.emit(this.formdata)}
   // }
   clickEvent(Event: any) {
+    // this.formdata.valid &&
     if (this.formdata.valid && Event.name == "next") {
       Event.data = this.formdata.value
       this.btnResponse.emit(Event)

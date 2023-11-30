@@ -23,8 +23,8 @@ import { ConsentComponent } from '../processcomponents/consent/consent.component
 })
 export class DashboardGroupComponent implements OnInit {
   @Input() steppers: IProduct[] = [];
-  @ViewChild('processview',{read:ViewContainerRef,static:true}) viewRef: any;
-  componentRef:any
+  @ViewChild('processview', { read: ViewContainerRef, static: true }) viewRef: any;
+  componentRef: any
   firstIndex = 0;
   // friendslist = [
   //   {
@@ -60,13 +60,13 @@ export class DashboardGroupComponent implements OnInit {
   //     age: 74
   //   },
   // ]
-  items=4
-  errorState=false
-  data={}
+  items = 4
+  errorState = false
+  data= {}
   constructor(
     public viewContainerRef: ViewContainerRef,
     private componentFactoryResolver: ComponentFactoryResolver
-  ) {}
+  ) { }
   // public components = [PersonalinfoComponent, BillingComponent,ConsentComponent];
   names: string[] = [
     'personal details',
@@ -77,30 +77,35 @@ export class DashboardGroupComponent implements OnInit {
   ];
 
   stepper: IStepper[] = [
-    {name: 'personal details',
-    isCompleted: false,
-    inProgress: false
-  },
-  {name: 'billing',
-  isCompleted: false,
-  inProgress: false
-}, {name: 'consent',
-isCompleted: false,
-inProgress: false
-}, {name: 'terms and conditions',
-isCompleted: false,
-inProgress: false
-},
-{name: 'Review',
-isCompleted: false,
-inProgress: false
-},
+    {
+      name: 'personal details',
+      isCompleted: false,
+      inProgress: false
+    },
+    {
+      name: 'billing',
+      isCompleted: false,
+      inProgress: false
+    }, {
+      name: 'consent',
+      isCompleted: false,
+      inProgress: false
+    }, {
+      name: 'terms and conditions',
+      isCompleted: false,
+      inProgress: false
+    },
+    {
+      name: 'Review',
+      isCompleted: false,
+      inProgress: false
+    },
   ];
 
 
   ngOnInit(): void {
     if (this.firstIndex == 0) {
-      this.loadprocess(this.steppers[this.firstIndex],this.firstIndex );
+      this.loadprocess(this.steppers[this.firstIndex], this.firstIndex);
     }
     // var myName = this.text.nativeElement.value;
     // console.log(myName);
@@ -114,51 +119,51 @@ inProgress: false
     console.log(index)
     this.viewRef.clear();
     // console.log("hehe")
-    if(this.stepper[index].isCompleted === false){
-    this.stepper[index].inProgress = true;
+    if (this.stepper[index].isCompleted === false) {
+      this.stepper[index].inProgress = true;
     }
-         const currentcomponent=new AddStepItem(prop.component,prop.data)
+    const currentcomponent = new AddStepItem(prop.component, prop.data)
     const componentmain = this.componentFactoryResolver.resolveComponentFactory(
       prop.component
     );
 
     this.componentRef = this.viewRef.createComponent(componentmain);
     console.log(this.componentRef.data)
-    if(this.componentRef.instance as AddStepItem) {
+    if (this.componentRef.instance as AddStepItem) {
       console.log("hehe")
     }
     // console.log( this.componentRef.instance.inputdata)
     // (this.componentRef.instance as AddStepItem).data =prop.data;
-    (this.componentRef.instance as AddStepItem).data =this.data;
-    this.componentRef.instance.btnResponse.subscribe((val: any) =>{
-     console.log(val.data)
+    (this.componentRef.instance as AddStepItem).data = this.data;
+    this.componentRef.instance.btnResponse.subscribe((val: any) => {
+      console.log(val.data)
 
-if(val.name=="error"){
-  this.showError()
-}
-if(val.name=="next"){
-  this.stepper[index].inProgress = false;
-  this.stepper[index].isCompleted = true;
-  Object.assign(this.data, val.data);
-  console.log(this.data)
-    this.next()
-  
-}
-if(val.name=="previous"){
-  Object.assign(this.data, val.data);
-  console.log(this.data)
-  this.pre()
-}
-    this.componentRef.data=val
-  console.log("hi")
+      if (val.name == "error") {
+        this.showError()
+      }
+      if (val.name == "next") {
+        this.stepper[index].inProgress = false;
+        this.stepper[index].isCompleted = true;
+        Object.assign(this.data, val.data);
+        console.log(this.data)
+        this.next()
 
-}
+      }
+      if (val.name == "previous") {
+        Object.assign(this.data, val.data);
+        console.log(this.data)
+        this.pre()
+      }
+      this.componentRef.data = val
+      console.log("hi")
+
+    }
     );
     // console.log(this.stepsItems[this.i].component == componentmain)
   }
-  showError(){
-    this.errorState=true
-    setTimeout(() => { this.errorState=false; }, 2000);
+  showError() {
+    this.errorState = true
+    setTimeout(() => { this.errorState = false; }, 2000);
   }
   next() {
     // if (this.i < this.components.length - 1) {
@@ -167,13 +172,13 @@ if(val.name=="previous"){
     //   this.nextStep = this.components[this.i];
     // }
     // this.submitRequest = this.event.emit;
- 
-    // this.steppers.push(new AddStepItem(BillingComponent,{name:"BillingComponent"}))
-    console.log(this.firstIndex);
-    if (this.firstIndex >= 0) {
-      this.firstIndex++;
 
-      this.loadprocess(this.steppers[this.firstIndex],this.firstIndex);
+    // this.steppers.push(new AddStepItem(BillingComponent,{name:"BillingComponent"}))
+    if (this.firstIndex >= 0 && this.firstIndex<this.steppers.length-1) {
+      this.firstIndex++;
+      console.log(this.firstIndex);
+
+      this.loadprocess(this.steppers[this.firstIndex], this.firstIndex);
       // this.loadproceess (thi.stepa kkfkiiiiif)
     }
   }
@@ -184,7 +189,7 @@ if(val.name=="previous"){
         this.firstIndex = 0;
       }
       this.loadprocess(this.steppers[this.firstIndex], this.firstIndex);
-      
+
     }
     //   if (this.i > 0) {
     //     this.i--;
@@ -194,7 +199,7 @@ if(val.name=="previous"){
   }
 
   onButtonClick(): void {
-    
+
   }
 }
 

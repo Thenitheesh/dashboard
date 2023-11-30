@@ -11,6 +11,8 @@ import { BillingComponent } from './processcomponents/billing/billing.component'
 import { ProductContentComponent } from './product-content/product-content.component';
 import { FooterComponent } from './footer/footer.component';
 import { ConsentComponent } from './processcomponents/consent/consent.component';
+import { TermsandconditionsComponent } from './processcomponents/termsandconditions/termsandconditions.component';
+import { ReviewComponent } from './processcomponents/review/review.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { ConsentComponent } from './processcomponents/consent/consent.component'
     BillingComponent,
     ProductContentComponent,
     FooterComponent,
-    ConsentComponent
+    ConsentComponent,
+    TermsandconditionsComponent,
+    ReviewComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,10 @@
+
+<div>
+    <div *ngFor="let item of data | keyvalue">
+        <h3>{{item.key}}</h3>
+        <p>{{item.value}}</p>
+    </div>
+</div>
+<app-footer (btnresponse)="clickEvent($event)" [btnvalue]="submitString">
+    <button class="btnbottom"  (click)="submit()" >submit</button>
+</app-footer>

@@ -2,7 +2,11 @@
     <footer>
         <div class="buttoncontainer">
             <button class="btnbottom" (click)="previous()">Previous</button>
-            <button class="btnbottom" (click)="next()">Next</button>
+            <button class="btnbottom" *ngIf="btnvalue.length==0" (click)="next()">Next</button>
+            <ng-content  > 
+           
+
+            </ng-content>
         </div>
     </footer>
 </div>
