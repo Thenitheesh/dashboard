@@ -1,9 +1,26 @@
-<div>
+<form [formGroup]="formdata">
+  <div>
     <div *ngFor="let item of data | keyvalue">
-        <h3>{{item.key}}</h3>
-        <p>{{item.value}}</p>
+      <h3>{{ item.key }}</h3>
+      <!--    <p >{{item.value}}</p> -->
+      <div
+        *ngIf="
+          item.value == 'true' || item.value == 'false';
+          then thenBlock;
+          else elseBlock
+        "
+      ></div>
+      <ng-template #elseBlock>{{ item.value }} </ng-template>
+      <ng-template #thenBlock >
+     
+        <input type="radio" name="{{ item.key }}"    input.value="item.value" value="true"  />
+        <label for="{{ item.value }}">Yes</label>
+        <input type="radio" name="{{ item.key }}" value="false"/>
+        <label for="{{ item.value }}">No</label>
+      </ng-template>
     </div>
-</div>
+  </div>
+</form>
 <app-footer (btnresponse)="clickEvent($event)" [btnvalue]="submitString">
-    <button select="[btn]" class="btnbottom" (click)="submit()">submit</button>
+  <button select="[btn]" class="btnbottom" (click)="submit()">submit</button>
 </app-footer>

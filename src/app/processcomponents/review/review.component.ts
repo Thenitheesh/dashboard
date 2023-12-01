@@ -16,6 +16,7 @@ export class ReviewComponent implements OnInit {
 
   ngOnInit(): void {
     this.formdata.patchValue(this.data)
+    console.log(this.data)
   }
   formdata = this.fb.group({
 

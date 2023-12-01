@@ -63,11 +63,23 @@ export class DashboardGroupComponent implements OnInit {
   items = 4
   errorState = false
   data= {}
+//   data={
+//     "FirstName": "nitheesh",
+//     "lastName": "gattamaneni",
+//     "Email": "gnitheesh2001@gmail.com",
+//     "phone": "7569907446",
+//     "address": "kammavaripalli, nellore",
+//     "price": "2569000",
+//     "tds": "true",
+//     "aadhaar": "641041697896",
+//     "aadhaarName": "nitheesh gattamaneni",
+//     "aadhaarAddress": "kammavaripalli, nellore",
+//     "kycconsent": "true"
+// }
   constructor(
     public viewContainerRef: ViewContainerRef,
     private componentFactoryResolver: ComponentFactoryResolver
   ) { }
-  // public components = [PersonalinfoComponent, BillingComponent,ConsentComponent];
   names: string[] = [
     'personal details',
     'billing',
