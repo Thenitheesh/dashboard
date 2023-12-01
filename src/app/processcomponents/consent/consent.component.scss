@@ -1,0 +1,18 @@
+.formdatacontainer{
+    display: flex;
+    flex-direction: column;
+    // padding: 2rem 5rem ;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    border-color:#bad6c6 ;
+
+}
+form > *{
+    margin-top: 1rem;
+}
+.radiobtn  input{
+    width: initial;
+    height: initial;
+}

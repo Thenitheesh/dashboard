@@ -1,2 +1,18 @@
-<p>consent works!</p>
+<div class="formdatacontainer">
+    <form [formGroup]="formdata">
+      <label id="aadhaar">Aadhaar Number</label>
+      <input type="text" formControlName="aadhaar" />
+      <label for="">Name as per aadhaar</label>
+      <input type="text" formControlName="aadhaarName">
+      <label for="aadhaarAddress">Aadhaar address</label>
+      <textarea id="aadhaarAddress" name="aadhaarAddress" formControlName="aadhaarAddress" ></textarea>
+      <div class="radiobtn">
+          <p>I confirm to you that my personal KYC details submitted to you may be shared with Central KYC Registry. I hereby consent to receive information from Central KYC Registry through SMS/Email on my registered number/email address provided to you</p>
+        <input type="radio" name="kycconsent" id="" value="true" formControlName="kycconsent">
+        <label for="kycconsent">Yes</label>
+        <input type="radio" name="kycconsent" id="" value="false" formControlName="kycconsent">
+        <label for="kycconsent">No</label>
+    </div>
+    </form>
+  </div>
 <app-footer (btnresponse)="clickEvent($event)"></app-footer>

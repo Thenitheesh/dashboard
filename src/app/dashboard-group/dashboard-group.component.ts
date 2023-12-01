@@ -87,7 +87,7 @@ export class DashboardGroupComponent implements OnInit {
       isCompleted: false,
       inProgress: false
     }, {
-      name: 'consent',
+      name: 'KYC',
       isCompleted: false,
       inProgress: false
     }, {

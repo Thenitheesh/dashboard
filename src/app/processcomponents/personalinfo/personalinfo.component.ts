@@ -46,7 +46,7 @@ export class PersonalinfoComponent implements OnInit {
   // }
   clickEvent(Event: any) {
     // this.formdata.valid &&
-    if (this.formdata.valid && Event.name == "next") {
+    if (  this.formdata.valid && Event.name == "next") {
       Event.data = this.formdata.value
       this.btnResponse.emit(Event)
     } else if (Event.name == "previous") {

@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
+import { FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-consent',
@@ -15,9 +15,13 @@ export class ConsentComponent implements OnInit {
     this.formdata.patchValue(this.data)
   }
   formdata = this.fb.group({
-
+    aadhaar: ['', [Validators.required, Validators.minLength(5)]],
+    aadhaarName: ['', [Validators.required, Validators.minLength(5)]],
+    aadhaarAddress: ['', [Validators.required, Validators.minLength(5)]],
+    kycconsent: ['', [Validators.required]],
   });
-  clickEvent(Event: any) {
+  clickEvent(Event: any) 
+  { console.log(this.formdata.valid)
     if (this.formdata.valid && Event.name == "next") {
       Event.data = this.formdata.value
       this.btnResponse.emit(Event)

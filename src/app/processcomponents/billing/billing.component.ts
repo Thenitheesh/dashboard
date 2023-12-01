@@ -18,6 +18,7 @@ export class BillingComponent implements OnInit {
 
   formdata=this.fb.group({
     price: ['', [Validators.required, Validators.minLength(5)]],
+    tds:['',[Validators.required]]
   })
   clickEvent(Event:any){
     if(this.formdata.valid && Event.name=="next"){

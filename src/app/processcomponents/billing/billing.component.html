@@ -2,5 +2,12 @@
 <h1>price</h1>
 <p>200000$</p>
 <input type="text" formControlName="price">
+<div class="radiobtn">
+    <p>Whether you want to claim interest on Term Deposit without Tax deduction at source (TDS)</p>
+    <input type="radio" name="tds" id="" value="true" formControlName="tds">
+    <label for="tds">Yes</label>
+    <input type="radio" name="tds" id="" value="false" formControlName="tds">
+    <label for="tds">No</label>
+</div>
 </form>
 <app-footer (btnresponse)="clickEvent($event)"></app-footer>
